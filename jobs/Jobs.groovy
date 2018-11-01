@@ -3,15 +3,15 @@ repo = "https://github.com/videocursoscloud/test-jenkins-1.git"
 repo_name = "repo"
 
 pipelineJob(project_name){
-	definition{
+	definition {
 		triggers{
 			scm('H/1 * * * *')
 		}
 
 		cpsScm{
-			scan{
-				git{
-					remote{
+			scm{
+				git {
+					remote {
 						name(repo_name)
 						url(repo)
 					}
