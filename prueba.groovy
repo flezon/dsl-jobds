@@ -1,11 +1,24 @@
-job('DSL-Tutorial-1-Test') {
-    scm {
-        git('git://github.com/videocursoscloud/test-jenkins-1.git')
-    }
-    triggers {
-        scm('H/15 * * * *')
-    }
-    steps {
-        maven('-e clean test')
-    }
+project_name = "jenkins-pipeline"
+repo = "https://github.com/videocursoscloud/test-jenkins-1.git"
+repo_name = "repo"
+
+pipelineJob(project_name){
+	definition {
+		triggers{
+			scm('H/1 * * * *')
+		}
+
+		cpsScm{
+			scm{
+				git {
+					remote {
+						name(repo_name)
+						url(repo)
+					}
+				}
+				scriptPath("Jenkinsfile")
+			}
+
+		}
+	}
 }
