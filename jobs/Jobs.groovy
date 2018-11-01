@@ -2,6 +2,11 @@ project_name = "jenkins-pipeline"
 repo = "https://github.com/videocursoscloud/test-jenkins-1.git"
 repo_name = "repo"
 
+folder('project-jenkins') {
+    displayName('Project A')
+    description('Folder for project A')
+}
+
 pipelineJob(project_name){
 	definition {
 		triggers{
