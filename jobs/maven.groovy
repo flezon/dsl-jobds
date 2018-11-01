@@ -4,7 +4,7 @@ node {
     def rtMaven
     
     stage ('Clone') {
-        git url: 'https://github.com/JFrog/project-examples.git'
+        git url: 'https://carlosquimbayo@bitbucket.org/PeriferiaIT-AUT/demo-bbva-java.git'
     }
  
     stage ('Artifactory configuration') {
