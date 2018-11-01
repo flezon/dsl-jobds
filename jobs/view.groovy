@@ -3,7 +3,7 @@ listView('test') {
     filterBuildQueue()
     filterExecutors()
     jobs {
-        regex(/jobs.*/)
+        regex(/jenkins-.+/)
     }
     jobFilters {
         status {
